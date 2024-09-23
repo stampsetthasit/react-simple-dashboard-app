@@ -5,10 +5,6 @@ import Table from '../../components/table/UserTable'
 
 import users from '../../data/users.json' // Data
 
-  // TODO: Dashboard Profile / Login
-  // TODO: ROUTE
-  // TODO: Write Readme.md
-
 interface UserDetail {
   id: number,
   name: string,
