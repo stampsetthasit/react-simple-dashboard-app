@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# Simple Dashboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple dashboard web application built with **React**, **Typescript** and **Vite** for fast development and performance.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+Ensure you have the following installed before setting up the project:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js (v14 or higher)
+- npm or Yarn
+- Git
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- User authentication with mock data
+- Sidebar with dynamic data (name, username, image)
+- Responsive design
+
+## Installation
+
+Follow these steps to install and set up the project:
+
+1.  Clone the repository:
+
+        git clone https://github.com/stampsetthasit/react-simple-dashboard-app.git
+        cd react-simple-dashboard-app
+
+2.  Install dependencies: If you’re using npm:
+
+        npm install
+
+    Or if you're using yarn:
+
+        yarn install
+
+## Running the Project
+
+To start the project locally:
+
+    npm start
+
+Or using yarn:
+
+    yarn start
+
+## Project Structure
+
+```
+/src
+  /assets
+    /css
+    /img
+    /svg
+  /components
+    /field
+    /sidebar
+    /table
+  /data
+  /pages
+    /auth
+    /home
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Authentication
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Default credentials:
+  - Username: defaultadmin
+  - Password: password
+- User credentials:
+  - Username: Valid username from mockup data (e.g. setthasit)
+  - Password: Any password will work

@@ -14,6 +14,12 @@ const Sidebar = ({ }) => {
   const [isOpen, setIsOpen] = useState(true);
   const { name, username, image } = location.state || JSON.parse(localStorage.getItem('user') || '{}');
 
+  const handleLogout = () => {
+    // Clear user credentials from storage
+    localStorage.clear();
+    navigate('/login');
+  };
+
   const Menu: Props[] = [
     {
       title: "User Directory",
@@ -51,7 +57,7 @@ const Sidebar = ({ }) => {
           <div className="mx-5">
             <div className="bg-[url('/src/assets/img/profile-bg-blur.png')] rounded-lg shadow-md">
               <div className="flex">
-                <img src={image ?? "/src/assets/img/default-profile.jpg"} className="p-1 z-10 w-10 mr-2 bg-white/70 rounded-full" alt="user profile" />
+                <img src={image ?? "/src/assets/img/default-profile.jpg"} className="p-1 z-10 w-10 mr-2 bg-white/70 rounded-full" />
                 <div className="text-white pt-1 text-sm">
                   <span id="name">{name}</span>
                   <br /> 
@@ -76,7 +82,7 @@ const Sidebar = ({ }) => {
           </ul>
         </div>
         {/* Log Out */}
-        <Link to="/login">
+        <Link to="/login" onClick={handleLogout}>
           <div className="absolute bottom-14 flex items-center">
               <div className="mx-4 relative flex items-center gap-x-3 cursor-pointer group">
                 <div className="h-6 w-6 p-1 rounded-full bg-gray-primary flex items-center justify-center group-hover:bg-red-primary">

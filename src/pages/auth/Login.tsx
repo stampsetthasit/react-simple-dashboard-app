@@ -40,7 +40,7 @@ export default function Login() {
             username: username,
           }
         })
-        // Inside the successful login handler:
+        // Inside the successful login handler
         localStorage.setItem('user', JSON.stringify({
           name: "Default Admin",
           username: username,
