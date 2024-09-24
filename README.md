@@ -2,6 +2,8 @@
 
 A simple dashboard web application built with **React**, **Typescript** and **Vite** for fast development and performance.
 
+![alt text](/public/login-design.png)
+![alt text](/public/home-design.png)
 
 ## Prerequisites
 
@@ -14,7 +16,8 @@ Ensure you have the following installed before setting up the project:
 ## Features
 
 - User authentication with mock data
-- Sidebar with dynamic data (name, username, image)
+- Sidebar with dynamic data
+- Sort & Filter
 - Responsive design
 
 ## Installation
