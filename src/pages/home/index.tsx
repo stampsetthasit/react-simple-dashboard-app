@@ -40,6 +40,7 @@ export default function Home() {
 
     // Update results with the filtered users based on the search term entered
     setResult(filteredUsers);
+    console.log(result);
     setState({
       query: searchTerm,
       list: sortUsers(filteredUsers, sortType)
