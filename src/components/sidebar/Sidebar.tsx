@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 type Props = {
   title: string;
@@ -7,12 +8,16 @@ type Props = {
   icon: string;
 }
 
-const Sidebar = () => {
+const Sidebar = ({ }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
+  const { name, username, image } = location.state || JSON.parse(localStorage.getItem('user') || '{}');
+
   const Menu: Props[] = [
     {
       title: "User Directory",
-      path: "/",
+      path: "#",
       icon: "src/assets/svg/dashboard.svg"
     },
     {
@@ -21,6 +26,13 @@ const Sidebar = () => {
       icon: "src/assets/svg/github.svg",
     }
   ]
+
+  useEffect(() => {
+    // If there's no data in state or localStorage, you can redirect the user to login
+    if (!name || !username) {
+      navigate("/")
+    }
+  }, [name, username]);
 
   return (
     <div className='flex'>
@@ -39,11 +51,11 @@ const Sidebar = () => {
           <div className="mx-5">
             <div className="bg-[url('/src/assets/img/profile-bg-blur.png')] rounded-lg shadow-md">
               <div className="flex">
-                <img src="/src/assets/img/default-profile.jpg" className="p-1 z-10 w-10 rounded-full mr-2" alt="user profile" />
+                <img src={image ?? "/src/assets/img/default-profile.jpg"} className="p-1 z-10 w-10 mr-2 bg-white/70 rounded-full" alt="user profile" />
                 <div className="text-white pt-1 text-sm">
-                  <span id="name">Setthasit Poosawat</span>
+                  <span id="name">{name}</span>
                   <br /> 
-                  <p className="text-xs">@<span id="username">setthasit</span></p>
+                  <p className="text-xs">@<span id="username">{username}</span></p>
                 </div>
               </div>
             </div>

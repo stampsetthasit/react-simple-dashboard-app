@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Sidebar from '../../components/sidebar/Sidebar'
-import Input from '../../components/fields/InputField'
+import Input from '../../components/field/InputField'
 import Table from '../../components/table/UserTable'
 
 import users from '../../data/users.json' // Data
@@ -79,7 +79,7 @@ export default function Home() {
           <div className="flex mx-auto justify-between items-center">
             {/* Welcome Heading */}
             <div className="flex flex-col">
-              <p className="text-gray-primary text-sm truncate max-w-xs">Hello Setthasit, Welcome home</p>
+              <p className="text-gray-primary text-sm truncate max-w-xs">Welcome to Dashboard</p>
               <div className="flex items-center">
                   <h1 className="text-3xl font-semibold text-black truncate">
                     User Directory
